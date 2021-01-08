@@ -1,21 +1,33 @@
 function sumIntervals(arrs){
-    let count= 0;
-    let isInclude = false;
-    let isCommon = false;
     let temp = [];
+    let copy = [];
+    let count = new Set();
+    Object.assign(copy, arrs);
+    console.log(copy);
     for(let arr of arrs){
-        temp.push([arr[0], arr[1]]);
-
-        
-        
+        temp = new Array((arr[1] - arr[0])).fill(true).map((v,i) => arr[0]+i);
+        for(let t of temp){
+            count.add(t);
+        }
     }
-
-    return count;
+    console.log(count.size);    
+    return count.size;
 }
-// sumIntervals( [[1,4],[7, 10],[3, 5]]);
-sumIntervals( [ [ 1, 20 ], [ 10, 20 ], [ 1, 6 ], [ 16, 19 ], [ 5, 11 ] ]);
+
+sumIntervals( [ [ 1, 6 ], [ 10, 20 ], [ 1, 20 ], [ 16, 19 ], [ 5, 11 ] ]);
 
 
-// 1 20 
 
-// KATA 제목 : Sum of Intervals
+// 1 1 5 6 10 11 16 19 20 20
+// 
+
+
+// function sumIntervals(intervals){
+//     var numbers = [];
+//     intervals.forEach( function(interval) {
+//       for (var i = interval[0] ; i < interval[1] ; i++) {
+//         if (numbers.indexOf(i) == -1) numbers.push(i);
+//       }
+//     });
+//     return numbers.length;
+//   }
