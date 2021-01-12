@@ -7,19 +7,16 @@ function solution(strings, arr){
         for(let i in copy){
             let c = copy[i];
             let end = c.indexOf(mark);
-            console.log("====")
-            console.log(temp)
-            console.log("====")
             if(end === -1){
-                temp.push(c);
+                copy[i] = c.trim();
             }else{
-                temp.push(c.substr(0, end));
+                copy[i] = c.substr(0, end).trim();
             }
-            copy[i] = c;
         }
        
     }
-    console.log(temp);
+    console.log(copy.join('\n'));
+    return copy.join('\n')
 }
 
 solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
