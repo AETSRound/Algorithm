@@ -26,3 +26,23 @@ function toBinary(numb){
 }
 
 console.log(toBinary(20));
+
+
+function sumNumb(numb){
+    if(numb.length ==1){
+        return parseInt(numb[0]);
+    }
+    return parseInt(numb[numb.length-1]) + sumNumb(numb.slice(0, numb.length-1));
+}
+
+console.log(sumNumb('123123'));
+
+function 피보나치(numb){
+    if(numb == 1 || numb==2){
+        return 1;
+    }
+    return 피보나치(numb - 1) + 피보나치(numb-2);
+}
+
+console.log(피보나치(7));
+
