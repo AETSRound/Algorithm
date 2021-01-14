@@ -15,3 +15,9 @@ function maxFor(arrs){
 }
 
 console.log(maxFor([1,10, 30, 4, 9, 28]));
+
+function maxReducer(arrs){
+    return arrs.reduce((accum, current) => accum > current ? accum : current);
+}
+
+console.log(maxReducer([1,10, 30, 4, 9, 28]));
