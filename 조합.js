@@ -1,3 +1,4 @@
+// Next smaller number with the same digits
 function solution(numb){
     // numb = 2071
 
@@ -13,18 +14,16 @@ function solution(numb){
         let rest = permutation(subArr);
         let final = head+rest;
         
-        // console.log(final);
+        console.log(rest);
         // console.log(num);
-        let t = nString.slice(nString.length - final.length, nString.length);
-        // console.log(t);
-        if(parseInt(final) > parseInt(t)){
+        let t = nString.slice(nString.length - String(rest).length, nString.length);
+        console.log(t);
+        if(rest > parseInt(t)){
             console.log("뭔가 잘못");
-            console.log(final);
-            console.log(numb);
             console.log("뭔가 아닌데.");
             let c = [];
             Object.assign(c,arr);
-            head = Math.max(c);
+            console.log();
         }
         else{
             return final;
@@ -34,7 +33,7 @@ function solution(numb){
     }
     let result = permutation(nString);
 
-    console.log(result);
+    // console.log(result);
 }
 
 solution(1234567908);
