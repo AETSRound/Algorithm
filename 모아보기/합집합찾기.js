@@ -28,7 +28,7 @@ function solution()
 }
 
 // 두 개의 노드를 같은 부모 노드로 합친다.
-export function unionParent(arr, a, b)
+function unionParent(arr, a, b)
 {
     a = getParent(arr, a);
     b = getParent(arr, b);
@@ -41,14 +41,14 @@ export function unionParent(arr, a, b)
 }
 
 // 부모 노드를 찾는 재귀함수
-export function getParent(arr, x)
+function getParent(arr, x)
 {
     if (arr[x] === x) return x;
     return arr[x] = getParent(arr, arr[x]);
 }
 
 // 같은 부모 노드를 갖는지 확인한다.
-export function findParent(arr, a, b)
+function findParent(arr, a, b)
 {
     a = getParent(arr, a);
     b = getParent(arr, b);
