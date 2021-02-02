@@ -1,6 +1,4 @@
 function solution(n, edge) {
-    let answer = 0;
-
     const node = new Map();
     for(let e of edge){
         if(node.get(e[0])){
@@ -31,4 +29,4 @@ function solution(n, edge) {
 }
 
 
-solution(6, [[3, 6], [4, 3], [3, 2], [1, 3], [1, 2], [2, 4], [5, 2]]	);
+console.log(solution(6, [[3, 6], [4, 3], [3, 2], [1, 3], [1, 2], [2, 4], [5, 2]]	));
